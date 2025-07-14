@@ -1,0 +1,173 @@
+{% extends 'layout.html' %}
+
+{% block title %} <title>Easy Access Security</title> {% endblock %}
+
+{% block content %}
+<!-- Hero Section with Friendly Graphics -->
+<!-- Main Header -->
+<section style="padding: 50px 20px; font-family: 'Helvetica Neue', sans-serif; position: relative; overflow: hidden; margin-top: 0px;">
+  <!-- Decorative Shapes -->
+  <div style="position: absolute; top: -60px; right: -70px; width: 250px; height: 250px; background: #9d5dde; border-radius: 50%; opacity: 0.2; transform: rotate(20deg);"></div>
+  <div style="position: absolute; bottom: -60px; left: -20px; width: 250px; height: 250px; background: #6517b3; border-radius: 50%; opacity: 0.15; transform: rotate(-25deg);"></div>
+  
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; z-index: 1; position: relative;">
+    <!-- Main Title -->
+    <h1 style="font-size: 3rem; font-weight: bold; color: #333; margin-bottom: 20px;">Keep Your Digital Stuff Safe 🔒</h1>
+    <!-- Short Explanation -->
+    <p style="font-size: 1.2rem; color: #555; max-width: 600px;">Easily control who can see or use your things. Keep your things protected. We are here to help secure your digital world.</p>
+    
+    <!-- Inspiration Quote -->
+    <div style="margin-top: 30px; font-style: italic; font-size: 1rem; color: #414040; display: flex; align-items: center; gap: 10px;">
+      <i class="fas fa-shield-alt" style="color: #ffcc00;"></i>
+      <span>"Safe access builds trust."</span>
+    </div>
+    
+    <!-- Button to Learn More -->
+    <a href="#features" style="margin-top: 40px; padding: 15px 30px; background: #7f68a1; color: #ffffff; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: background 0.3s;">
+      See How It Works
+    </a>
+  </div>
+</section>
+
+<!-- What We Offer Section -->
+<section id="features" style="padding: 50px 20px; font-family: 'Helvetica Neue', sans-serif; position: relative; overflow: hidden; margin-top: 0px;">
+  <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px;">
+    
+    <!-- Feature 1: Tech Stack -->
+    <div style="background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center;">
+      <i class="fas fa-laptop-code" style="font-size: 2.5rem; color: #20b2aa; margin-bottom: 15px;"></i>
+      <h3 style="margin-bottom: 10px;">Built with Tech</h3>
+      <p style="color: #555;">Our platform uses the technologies like Python, Flask and SQL for a robust and scalable security solution.</p>
+    </div>
+    
+    <!-- Feature 2: Responsive Design -->
+    <div style="background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center;">
+      <i class="fas fa-mobile-alt" style="font-size: 2.5rem; color: #6a5acd; margin-bottom: 15px;"></i>
+      <h3 style="margin-bottom: 10px;">Responsive & Mobile-Friendly</h3>
+      <p style="color: #555;">Our website adapts seamlessly to all devices, ensuring a smooth experience whether on desktop or mobile.</p>
+    </div>
+    
+    <!-- Feature 3: Security Measures -->
+    <div style="background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center;">
+      <i class="fas fa-shield-virus" style="font-size: 2.5rem; color: #ff7f50; margin-bottom: 15px;"></i>
+      <h3 style="margin-bottom: 10px;">Advanced Security</h3>
+      <p style="color: #555;">We implement encryption, secure protocols, and regular audits to keep your data safe from threats.</p>
+    </div>
+  </div>
+</section>
+
+<!-- More Solutions -->
+<div class="container my-5">
+  <h1 class="text-center mb-4 display-4 fw-bold">Our Security Help</h1>
+  <p class="text-center mb-5 lead text-muted">Help your team stay safe with easy-to-use login and permission tools made for today’s needs.</p>
+  
+  <!-- List of Features -->
+  <div class="row gy-4 justify-content-center">
+    <!-- Feature 1 -->
+    <div class="col-md-4 col-sm-6 d-flex justify-content-center">
+      <div class="card hover-shadow rounded-3 border-0 bg-light feature-box">
+        <div class="card-body d-flex flex-column align-items-center text-center p-4">
+          <div class="icon-wrapper mb-3">
+            <i class="fas fa-shield-alt fa-4x" style="color: #20b2aa;"></i>
+          </div>
+          <h5 class="card-title mb-3 fw-semibold text-center fs-5">Easy Sign-In</h5>
+          <p class="card-text text-muted fs-6 mb-0">Use simple ways to log in, like face scans, codes, or social login.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Feature 2 -->
+    <div class="col-md-4 col-sm-6 d-flex justify-content-center">
+      <div class="card hover-shadow rounded-3 border-0 bg-light feature-box">
+        <div class="card-body d-flex flex-column align-items-center text-center p-4">
+          <div class="icon-wrapper mb-3">
+            <i class="fas fa-user-shield fa-4x" style="color: #6a5acd;"></i>
+          </div>
+          <h5 class="card-title mb-3 fw-semibold text-center fs-5">Authorization Control</h5>
+          <p class="card-text text-muted fs-6 mb-0">Define who can access what, ensuring only authorized users get the right privileges.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Feature 3 -->
+    <div class="col-md-4 col-sm-6 d-flex justify-content-center">
+      <div class="card hover-shadow rounded-3 border-0 bg-light feature-box">
+        <div class="card-body d-flex flex-column align-items-center text-center p-4">
+          <div class="icon-wrapper mb-3">
+            <i class="fas fa-user-lock fa-4x" style="color:#ff7f50;"></i>
+          </div>
+          <h5 class="card-title mb-3 fw-semibold text-center fs-5">Authentication System</h5>
+          <p class="card-text text-muted fs-6 mb-0">Implement multi-factor authentication and secure login flows to verify user identities.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Nice Style for Features -->
+<style>
+  .feature-box {
+    max-width: 300px;
+    min-height: 300px;
+    transition: box-shadow 0.3s, transform 0.3s;
+    border: 1px solid #dee2e6;
+    padding: 1.5rem;
+    background-color: #ffffff;
+  }
+  .hover-shadow:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    transform: translateY(-6px);
+  }
+  .icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  .card-text {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  @media(max-width: 768px) {
+    .feature-box {
+      max-width: 100%;
+      min-height: auto;
+      padding: 1rem;
+    }
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+
+<!-- Call to Action: Join Us -->
+<section style="padding: 50px 20px; font-family: 'Helvetica Neue', sans-serif;">
+  <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+    <h2 style="font-size: 2.5rem; color: #333; margin-bottom: 20px;">Start Protecting Your Digital World Today</h2>
+    <p style="font-size: 1.2rem; color: #464646; max-width: 700px; margin: 0 auto;">Join others by using our simple tools to keep everything safe and trustworthy </p>
+    <p>Your secure future starts now</p>
+    <a href="{{url_for('register')}}" style="margin-top: 30px; display: inline-block; padding: 15px 30px; background: #7f68a1; color: #fff; border-radius: 30px; font-weight: bold; font-size: 1rem; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: background 0.3s;">
+      Get Started Now
+    </a>
+  </div>
+</section>
+
+<!-- Quotes About Security -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+<!-- Font Awesome for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<section style="padding: 50px 20px; font-family: 'Helvetica Neue', sans-serif;">
+  <div style="max-width: 800px; margin: 0 auto; position: relative; overflow: hidden;">
+    <!-- Quote 1 -->
+    <div style="display: flex; align-items: center; justify-content: center; padding: 20px; border-radius: 15px; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1); flex-wrap: nowrap;">
+      <i class="fas fa-quote-left" style="color: #ff7f50; font-size: 1.3rem; margin-right: 10px; flex-shrink: 0;"></i>
+      <p style="font-family: 'Montserrat', sans-serif; font-size: 1.4rem; color: #555; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+        Getting security right keeps everyone happy.
+      </p>
+      <i class="fas fa-quote-right" style="color: #ff7f50; font-size: 1.3rem; margin-left: 10px; flex-shrink: 0;"></i>
+    </div>
+  </div>
+</section>
+{% endblock %}

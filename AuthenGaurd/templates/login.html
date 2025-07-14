@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<!-- Header with App Name -->
+<div class="container my-4 text-center">
+  <h1 style="font-size: 2.5em; font-weight: bold; color: #333;">AuthenGuard.com</h1>
+</div>
+
+<!-- Spacer: Add Bootstrap margin-top class for space below header -->
+<div class="container d-flex justify-content-center mt-5">
+  <div class="col-md-4 mb-4">
+    <div class="p-3 border rounded shadow-sm bg-light" style="height: auto; background-color:#f8f9fa;">
+      <h4 class="mb-3 text-center" style="color:#333;">Login</h4>
+      <form method="POST" action="{{ url_for('login') }}" style="font-size: 0.9em;">
+        {{ form.hidden_tag() }}
+        <!-- Email -->
+        <div class="mb-2">
+          {{ form.email.label(class="form-label", style="color:#555; font-size:1.2em;") }}
+          {{ form.email(class="form-control form-control-sm", id="emailLogin", placeholder="Enter your email", required=True) }}
+          {% for error in form.email.errors %}
+            <div class="text-danger" style="font-size:0.9em;">{{ error }}</div>
+          {% endfor %}
+        </div>
+
+        <!-- Password -->
+        <div class="mb-2">
+          {{ form.password.label(class="form-label", style="color:#555 ; font-size:1.2em;") }}
+          {{ form.password(class="form-control form-control-sm", id="passwordLogin", placeholder="Enter your password", required=True) }}
+          {% for error in form.password.errors %}
+            <div class="text-danger" style="font-size:0.9em;">{{ error }}</div>
+          {% endfor %}
+        </div>
+
+        <!-- Remember me checkbox -->
+        <div class="mb-2 form-check">
+          {{ form.remember(class="form-check-input", id="rememberMe") }}
+          <label class="form-check-label" for="rememberMe" style="font-size: 1em; color:#555;">Remember me</label>
+        </div>
+
+        <!-- Submit button -->
+        <div class="d-grid mb-2">
+          {{ form.submit(class="btn btn-primary btn-sm", style="background-color:#6a5acd; border:none;") }}
+        </div>
+
+        <!-- Forgot password link -->
+        <div class="text-center" style="font-size: 1em;">
+          <a href="#">Forgot password?</a>
+        </div>
+
+        <!-- Additional message below login button -->
+        <div class="text-center mt-3" style="font-size: 1em; color:#555;">
+          Don't have an account? <a href="{{ url_for('register') }}" style="color:#6a5acd;">Create account for free</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

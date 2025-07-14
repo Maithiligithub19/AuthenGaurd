@@ -1,0 +1,73 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<!-- Your existing header, logo, and profile placeholder code remains unchanged -->
+
+<!-- Heading for the page -->
+<div class="container my-4 text-center">
+  <h1 style="font-weight: bold; color: #000;">AuthenGuard.com</h1>
+</div>
+
+<div class="container my-4 mt-5" style="margin-top: 80px;">
+  <div class="row justify-content-center g-4">
+    <!-- Register Form Section -->
+    <div class="col-md-5 mb-4">
+      <div class="p-3 border rounded shadow-sm bg-light">
+        <h4 class="mb-3 text-center" style="color:#333;">Create Account</h4>
+       
+        <form method="POST" action="{{ url_for('register') }}" novalidate>
+          {{ form.hidden_tag() }}
+          
+          <div class="mb-2">
+            {{ form.full_name.label(class="form-label", style="color:#555; font-size:1.2em;") }}
+            {{ form.full_name(class="form-control form-control-sm" + (" is-invalid" if form.full_name.errors else ""), placeholder="Full name") }}
+            {% for error in form.full_name.errors %}
+              <div class="invalid-feedback">{{ error }}</div>
+            {% endfor %}
+          </div>
+          
+          <div class="mb-2">
+            {{ form.email.label(class="form-label", style="color:#555; font-size:1.2em;") }}
+            {{ form.email(class="form-control form-control-sm" + (" is-invalid" if form.email.errors else ""), placeholder="Email") }}
+            {% for error in form.email.errors %}
+              <div class="invalid-feedback">{{ error }}</div>
+            {% endfor %}
+          </div>
+          
+          <div class="mb-2">
+            {{ form.password.label(class="form-label", style="color:#555; font-size:1.2em;") }}
+            {{ form.password(class="form-control form-control-sm" + (" is-invalid" if form.password.errors else ""), placeholder="Password") }}
+            {% for error in form.password.errors %}
+              <div class="invalid-feedback">{{ error }}</div>
+            {% endfor %}
+          </div>
+          
+          <div class="mb-2">
+            {{ form.confirm_password.label(class="form-label", style="color:#555; font-size:1.2em;") }}
+            {{ form.confirm_password(class="form-control form-control-sm" + (" is-invalid" if form.confirm_password.errors else ""), placeholder="Confirm Password") }}
+            {% for error in form.confirm_password.errors %}
+              <div class="invalid-feedback">{{ error }}</div>
+            {% endfor %}
+          </div>
+          
+          <div class="mb-2 form-check">
+            {{ form.terms(class="form-check-input" + (" is-invalid" if form.terms.errors else ""), id="termsCheck") }}
+            <label class="form-check-label" for="termsCheck" style="font-size: 1em; color:#555;">I agree to Terms</label>
+            {% for error in form.terms.errors %}
+              <div class="invalid-feedback d-block">{{ error }}</div>
+            {% endfor %}
+          </div>
+          
+          <div class="d-grid mb-2">
+            {{ form.submit(class="btn btn-primary btn-sm", style="background-color:#6a5acd; border:none;") }}
+          </div>
+          
+          <p class="text-center" style="font-size:1em; margin-top:10px;">
+            Already have an account? <a href="{{ url_for('login') }}" style="color:#6a5acd;">Log in</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

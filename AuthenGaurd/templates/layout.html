@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% block title %}<title> </title> {% endblock %}
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+
+    <!-- Font Awesome CDN for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- Custom CSS to style navbar and layout -->
+    <style>
+      /* Make html and body take full height */
+      html, body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Optional: main content to grow */
+      main {
+        flex: 1;
+      }
+
+      /* Change navbar background color */
+      .navbar-custom {
+        background-color: #a591c1;
+      }
+
+      /* Style navbar links as buttons */
+.navbar-custom .nav-link {
+  color: #000 !important; /* or #fff for white text */
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 30px;
+  background-color: #fff; /* or your preferred color */
+  border: 1px solid black; /* specify border style */
+  text-decoration: none;
+}
+
+
+      /* Optional: Style the brand link */
+      .navbar-custom .navbar-brand {
+        color: #ffffff !important;
+        font-weight: bold;
+      }
+
+      /* Footer styles */
+      footer {
+        background-color: #7f68a1;
+        padding: 15px 20px; /* Reduced from 30px to 15px */
+        color: #373737;
+        text-align: center;
+        font-family: 'Helvetica Neue', sans-serif;
+        /* Keep footer at bottom */
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand" href="#">AuthenGuard.com</a>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              {% if current_user.is_authenticated %}
+  <a class="nav-link nav-link-custom" href="{{ url_for('dashboard') }}">Dashboard</a>
+{% else %}
+  <a class="nav-link nav-link-custom" href="{{ url_for('register') }}">Start for free</a>
+{% endif %}
+            </li>
+
+            <ul class="navbar-nav ms-3 mb-2 mb-lg-0">
+  {% if current_user.is_authenticated %}
+    <li class="nav-item">
+      <a class="nav-link nav-link-custom" href="{{ url_for('logout') }}">Logout</a>
+    </li>
+  {% else %}
+    <li class="nav-item">
+      <a class="nav-link nav-link-custom" href="{{ url_for('login') }}">Login</a>
+    </li>
+  {% endif %}
+</ul>
+          </ul>
+       
+  
+          
+          
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main content area -->
+    <main>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, msg in messages %}
+        <div class="alert alert-{{ category }} alert-dismissible fade show m-3" role="alert">
+          {{ msg }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  {% block content %}{% endblock %}
+</main>
+<nav>
+ 
+
+    <!-- Footer -->
+    <footer>
+      <p style="margin: 0;">© 2024 AuthenGuard.com All rights reserved.</p>
+      <div style="margin-top: 10px;">
+        <a href="#" style="margin: 0 10px; color: #373737; font-size: 1rem;"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a href="#" style="margin: 0 10px; color: #373737; font-size: 1rem;"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a href="#" style="margin: 0 10px; color: #373737; font-size: 1rem;"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    {% block scripts %}
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const alerts = document.querySelectorAll('.alert');
+    alerts.forEach(alert => {
+      setTimeout(() => {
+        const alertInstance = bootstrap.Alert.getOrCreateInstance(alert);
+        alertInstance.close();
+      }, 5000);
+    });
+  });
+</script>
+{% endblock %}
+   
+  </body>
+</html>
